@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>형제 선택자</title>
+</head>
+
+<body>
+    <style>
+        .menu5~li {
+            background: orange;
+        }
+
+        .menu5 + li {
+            background: blue;
+        }
+    </style>
+    <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li class="menu5">메뉴5</li>
+        <li>메뉴6</li>
+        <li>메뉴7</li>
+        <li>메뉴8</li>
+        <li>메뉴9</li>
+        <li>메뉴10</li>
+    </ul>
+</body>
+
+</html>
+
+<!-- 
+형제 선택자
+1) 형제 선택자 : 선택자 기준 오른쪽 형제 요소 (본인 제외) 
+선택자 ~ 형제 선택자 {} 
+
+2) 인접 형제 선택자 : 바로 오른쪽 옆 형제 요소
+선택자 + 인접 형제 선택자 {}
+라디오나 체크박스때 자주 씀
+
+가상 클래스 선택자
+1. 요소의 상태
+선택자 : 상태 속성 / 클론이 들어가야 상태임
+- :checked : 체크된 상태 선택
+- :selected : 선택된 상태 선택
+- :hover : 마우스를 올린 상태
+- :focus : 입력 대기 상태 
+-->

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>인라인과 블록</title>
+</head>
+
+<body>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+        }
+
+        .box1 {
+            background-color: blue;
+            /* display: inline; */
+        }
+
+        .box2 {
+            background-color: brown;
+            /* display: inline; */
+            /* display: none; */
+            visibility: hidden;
+        }
+
+        .box3 {
+            background-color: coral;
+            /* display: block; */
+            display: inline-block;
+        }
+        
+        .box4 {
+            background-color: black;
+            /* display: block; */
+            display: inline-block;
+        }
+    </style>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+
+    <span class="box box3"></span>
+    <span class="box box4"></span>
+</body>
+
+</html>
+
+<!--
+1. 블록 레벨 요소와 인라인 레벨 요소
+1)블록 레벨(block-level)요소
+    -공간 O, 너비(width), 높이(height) 지정
+    -줄개행
+    -p, h1~h6, div
+    -외부 여백(margin): 상하좌우 적용가능
+
+2)인라인 레벨(inline-level) 요소
+    -공간 X, 너비, 높이 지정 X
+    -줄개행
+    -a, i, u, b, span
+    -외부 여백(margin) : 좌우 여백만 가능
+
+2.박스 모델(box model) - 박스 형태의 콘텐츠
+    -블록 레벨 요소
+
+1)width, height 속성 - 콘텐츠 영역의 크기
+2)display 속성
+    -block :inline -> block
+    -inline :block -> inline
+    -inline-block :inline(줄 개행X) + block(너비, 높이 상하 외부 여백)
+    -none :감추기
+        참고) visibility
+                -visible : 보임, 기본값
+                -hidden : 영역 공간을 유지한 채 감추기
+
+
+-->

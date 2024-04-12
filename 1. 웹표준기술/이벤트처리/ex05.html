@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "윤다은",
+        age: 21,
+        showinfo() {
+          console.log(this);
+        },
+        handleEvent() {
+          console.log("handleEvent");
+        },
+      };
+
+      window.addEventListener("DOMContentLoaded", function () {
+        function handleClick() {
+          console.log(this);
+        }
+
+        handleClick = handleClick.bind(person);
+
+        const buttonEL = document.getElementById("button");
+        // buttonEL.addEventListener("click", handleClick);
+        // buttonEL.addEventListener("click", function () {
+        //   person.showinfo();
+
+        buttonEL.addEventListener("click", person); //person.handleEvent
+      });
+    </script>
+    <button type="button" id="button">클릭</button>
+  </body>
+</html>

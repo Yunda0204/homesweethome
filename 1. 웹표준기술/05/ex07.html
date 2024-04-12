@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+        html
+         {
+            font-size: 13px;
+            /* 1rem - 13px */
+        }
+
+        .font1 {
+            font-size: 2rem;
+            /* 26px */
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        .font2 {
+            font-size: 30px;
+            /* 1em = 30px */
+        }
+
+        .font2 span {
+            font-size: 2em;
+            /* 2em = 60px */
+        }
+    </style>
+    <p class="font1">가나다</p>
+    <p class="font2">
+        <span>가나다</span>
+    </p>
+</body>
+
+</html>
+
+<!--
+1. font-family
+font-family: 글꼴명 글꼴명(대체) 글꼴명...; / 띄어쓰기로 구분
+    -시스템 폰트 : OS에 설치된 폰트
+        참고) 글꼴명에 띄어쓰기가 있는 경우 반드시 ""로 감싸기 : "글꼴명"
+-맑은 고딕 : font-family: "맑은 고딕";
+    MS에만 있는 폰트
+
+1-1 웹 폰트
+    -OS가 달라도 동일한 폰트 적용 가능
+    -다양한 디자인의 폰트 제공
+        참고) @import(css 경로)- 외부 css 파일 추가, style 파일 내부에 정의가능
+
+
+2.font-size
+-고정 크기
+px / pt
+
+-상대 크기 : 기준사이즈
+rem : 가장 상위 태그에 적용된 글꼴 사이즈가 기준 - 1rem
+em : 부모 요소의 적용된 글꼴 사이즈 기준 - 1em 
+
+3. font-weight
+    폰트 두께
+        -lighter : 가늘게
+        -normal : 기본값(400)
+        -bold: 700
+        -bolder : 900
+        
+        -수치 : 100~900 / 400 - 기본
+            -폰트마다 지원범위가 다르다.
+-->
