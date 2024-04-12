@@ -7,6 +7,6 @@ public class Ex13 {
 
         double num3 = num1 * num2;
 
-        System.out.println(num3);
+        System.out.println(num3); // 변경사항
     }
 }
