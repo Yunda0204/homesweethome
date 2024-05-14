@@ -1,6 +1,6 @@
-package exam02;
+package exam01;
 
-public class qwe {
+public class zxc {
     public static void main(String[] args) {
         int Wins = 0; // 연승횟수
         int totalMoney = 200000; // 시작 금액
@@ -12,17 +12,13 @@ public class qwe {
         }
 
         // 승률 50퍼 * 필요연승 = 9연승 확률
-//        double probability = Math.round(Math.pow(0.5, Wins) * 100000) / 100000.0;
-//        double probability = Math.pow(0.5, Wins) * 100;
+        double continuity = Math.pow(0.5, Wins);
 
-        double probability = 100;
-        double a = 0.5;
-        for (double i = 0; i <= Wins; i++) {
-            probability *= a;
-        }
 
         System.out.println("필요 연승 : " + Wins);
-        System.out.println("연승 확률 : " + probability);
+        System.out.println("연승 확률 : " + continuity);
         System.out.println("달성 금액 : " + totalMoney);
     }
 }
+
+
