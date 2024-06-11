@@ -1,13 +1,13 @@
 package exam03;
 
-import exam02.A;
+import exam02.*;
 
-import java.util.Arrays;
-
-
-public class Ex01 {
+public class Ex01 { // exam03.Ex01
     public static void main(String[] args) {
         A a = new A();
-        Arrays.toString(new int[]{10, 20, 30});
+        B b = new B();
+
+        a.numA = 10;
+
     }
 }

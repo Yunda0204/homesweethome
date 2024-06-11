@@ -5,6 +5,5 @@ public class Ex11 {
         double num1 = 10.123;
         long num2 = (long)num1;
         System.out.println(num2);
-
     }
 }

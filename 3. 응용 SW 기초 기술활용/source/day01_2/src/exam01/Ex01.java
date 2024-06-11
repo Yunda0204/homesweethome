@@ -7,13 +7,13 @@ public class Ex01 {
 
         int num2 = 10; // 선언과 동시에 초기화
 
-        num1 = 20;
+        num1 = 15;
 
         System.out.println(num1);
         System.out.println(num2);
 
         int a = 100;
-        double SinHyoDick = 6.9;
-
+        int numberOfStudent = 10;
+        int 학생수 = 20;
     }
 }

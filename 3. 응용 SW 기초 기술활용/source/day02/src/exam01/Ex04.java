@@ -3,7 +3,7 @@ package exam01;
 public class Ex04 {
     public static void main(String[] args) {
         int floor = 10;
-        switch (floor) {
+        switch(floor) {
             case 1:
                 System.out.println("1층 약국");
                 break;
@@ -24,3 +24,4 @@ public class Ex04 {
         }
     }
 }
+

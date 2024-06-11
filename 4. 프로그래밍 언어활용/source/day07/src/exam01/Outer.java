@@ -10,12 +10,13 @@ public class Outer {
     };
 
     public Calculator method(int num3) {
-        return new Calculator() {
-            @Override
+       return new Calculator() {
             public int add(int num1, int num2) {
-                //num3 = 100; 지역변수의 상수화로 인해 변경 불가능 final int num3...
+                //num3 = 100;  지역변수의 상수화 final int num3 ...
                 return num1 + num2 + num3;
-               }
+            }
         };
+
+
     }
 }

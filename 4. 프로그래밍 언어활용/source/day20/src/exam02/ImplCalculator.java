@@ -1,6 +1,7 @@
 package exam02;
 
-public class ImplCalculator implements Calculator{
+public class ImplCalculator implements Calculator {
+
     @Override
     public long factorial(long num) {
 

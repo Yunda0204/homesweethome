@@ -13,7 +13,6 @@ const MyComponent = ({ name, num, children }) => {
 MyComponent.defaultProps = {
   // 기본값 설정
   name: '기본 이름',
-  num: '74',
 };
 
 MyComponent.propTypes = {

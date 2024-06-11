@@ -4,7 +4,7 @@ public class Ex01 {
     static int num1; // 0
     static double num2; // 0.0
     static boolean bool1; // false
-    static String str; // w
+    static String str; // null
 
     public static void main(String[] args) {
         System.out.println(num1);

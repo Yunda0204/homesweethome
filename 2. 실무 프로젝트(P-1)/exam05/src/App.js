@@ -6,13 +6,14 @@ const BoardList = loadable(() => import('./pages/BoardList'));
 const MainLayout = loadable(() => import('./layouts/MainLayout'));
 const NotFound = loadable(() => import('./pages/NotFound'));
 
-// import Home from './pages/Home';
-// import About from './pages/About';
-// import Board from './pages/Board';
-// import BoardList from './pages/BoardList';
-// import MainLayout from './layouts/MainLayout';
-// import NotFound from './pages/NotFound';
-
+/*
+import Home from './pages/Home';
+import About from './pages/About';
+import Board from './pages/Board';
+import BoardList from './pages/BoardList';
+import MainLayout from './layouts/MainLayout';
+import NotFound from './pages/NotFound';
+*/
 const App = () => {
   return (
     <Routes>

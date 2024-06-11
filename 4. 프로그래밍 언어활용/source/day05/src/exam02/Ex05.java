@@ -9,9 +9,9 @@ public class Ex05 {
     }
 
     public static void printA(A param) {
-        if (param instanceof C) {
-            C c = (C) param;
-        }
+       if (param instanceof C) {
+           C c = (C) param;
+       }
 
     }
 }

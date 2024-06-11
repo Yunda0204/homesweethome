@@ -1,7 +1,5 @@
 package exam01;
 
-import exam02.Schedule2;
-
 public class Ex04 {
     public static void main(String[] args) {
         Schedule2 s1 = new Schedule2(2024, 4, 17);
@@ -10,8 +8,6 @@ public class Ex04 {
         int day = s1.day();
         System.out.printf("%d-%d-%d%n", year, month, day);
 
-        System.out.println(s1); //s1.toStiring();
-
-
+        System.out.println(s1); // s1.toString();
     }
 }

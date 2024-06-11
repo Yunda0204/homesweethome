@@ -15,6 +15,5 @@ public class Ex02 {
         Collection<String> values = members.values();
         System.out.println("keys : " + keys);
         System.out.println("values : " + values);
-
     }
 }

@@ -1,7 +1,5 @@
 package exam03;
 
-import java.util.Arrays;
-
 @Todo("할일1")
 @Todo("할일2")
 @Todo("할일3")

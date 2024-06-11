@@ -7,6 +7,5 @@ public class Ex02 {
         grapeBox.add(new Grape());
 
         Jucier.make(grapeBox);
-
     }
 }

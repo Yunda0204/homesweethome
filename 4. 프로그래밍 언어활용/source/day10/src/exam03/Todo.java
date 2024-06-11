@@ -7,5 +7,4 @@ import java.lang.annotation.*;
 @Repeatable(Todos.class)
 public @interface Todo {
     String value();
-
 }

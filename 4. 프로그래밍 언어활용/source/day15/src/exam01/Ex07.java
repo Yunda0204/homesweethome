@@ -9,10 +9,11 @@ public class Ex07 {
 
         String[] selected = fruits.stream()
                 .peek(System.out::println)
-                .skip(4)
+                .skip(2)
                 .limit(2)
-//                .toArray(i -> new String[i]);
-                .toArray(String[]::new);
+                //.toArray(i -> new String[i]);
+                 .toArray(String[]::new);
+
         System.out.println(Arrays.toString(selected));
     }
 }

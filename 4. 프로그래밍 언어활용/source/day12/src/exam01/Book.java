@@ -2,8 +2,8 @@ package exam01;
 
 import java.util.Objects;
 
-public class Book implements Comparable<Book> {
-    private int isbn; // 도서번호
+public  class Book implements Comparable<Book> {
+    private int isbn; // 도서 번호
     private String title; // 도서명
     private String author; // 저자
 
@@ -14,19 +14,21 @@ public class Book implements Comparable<Book> {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(isbn, title, author);
-    }
-
-    @Override
     public boolean equals(Object obj) {
         if (obj instanceof Book) {
-            Book book = (Book) obj;
-            if (isbn == book.isbn && title.equals(book.title) && author.equals(book.author)) {
+            Book book = (Book)obj;
+            if (isbn == book.isbn && title.equals(book.title)
+                    && author.equals(book.author)) {
                 return true;
             }
         }
+
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isbn, title, author);
     }
 
     @Override
@@ -39,8 +41,8 @@ public class Book implements Comparable<Book> {
     }
 
     @Override
-    public int compareTo(Book o) {
-//        return isbn - o.isbn; // 오름차순
-        return o.isbn - isbn; // 내림차순
+    public final int compareTo(Book o) {
+        return isbn - o.isbn; // 오름차순
+        //return o.isbn - isbn; // 내림차순
     }
 }

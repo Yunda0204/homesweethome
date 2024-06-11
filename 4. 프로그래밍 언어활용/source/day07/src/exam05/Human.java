@@ -1,4 +1,4 @@
 package exam05;
 
-public class Human extends java.lang.Object{
+public class Human extends java.lang.Object {
 }

@@ -1,7 +1,5 @@
 package exam05;
 
-import javax.management.ObjectName;
-
 public class Ex02 {
     public static void main(String[] args) {
         Object[] humans = new Object[2];

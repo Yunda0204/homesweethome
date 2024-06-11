@@ -11,12 +11,11 @@ public class Ex03 {
         books.add(new Book(1003, "책4", "저자4"));
         books.add(new Book(1004, "책5", "저자5"));
 
-/*
         for (Book book : books) { // 향상된 for문
-
             System.out.println(book);
         }
-*/
+
         books.forEach(System.out::println);
+
     }
 }

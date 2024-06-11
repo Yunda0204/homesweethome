@@ -7,11 +7,9 @@ public class Ex01 {
         Instant today = Instant.now();
         System.out.println(today);
 
-        long time1 = today.getEpochSecond(); // 초단위
-        long time2 = today.toEpochMilli(); // 밀리초 단위
+        long time1 = today.getEpochSecond(); // 초단위 - Timestamp
+        long time2 = today.toEpochMilli(); // 밀리초 단위 - EpochTime, UID
 
-        System.out.println(time1);
-        System.out.println(time2);
         System.out.printf("time1=%d, time2=%d%n", time1, time2);
 
     }

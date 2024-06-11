@@ -1,16 +1,15 @@
 package exam01;
 
-public class SimpleCalculator extends Calculator{
+public class SimpleCalculator extends Calculator {
 
-    public SimpleCalculator(){
+    public SimpleCalculator() {
         super();
     }
 
     public int add(int num1, int num2) {
         return num1 + num2;
     }
-/*
-    @Override
+    /*
     public void commonMethod() {
 
     }*/

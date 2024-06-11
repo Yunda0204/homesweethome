@@ -8,6 +8,7 @@ class ErrorProcess extends Component {
 
   componentDidCatch(error, info) {
     console.error(error, info);
+
     this.setState({ isError: true, message: error.message });
   }
 

@@ -6,7 +6,7 @@ public class Schedule {
     private int day;
 
     public void setYear(int _year) {
-        this.year = _year;
+        year = _year;
     }
 
     public int getYear() {
@@ -14,7 +14,7 @@ public class Schedule {
     }
 
     public void setMonth(int _month) {
-        this.month = _month;
+        month = _month;
     }
 
     public int getMonth() {
@@ -24,21 +24,16 @@ public class Schedule {
     public void setDay(int _day) {
         if (month == 2 && _day > 28) {
             _day = 28;
-            if (year % 4 == 0) {
-                _day = 29;
-            } else {
-                _day = 28;
-            }
         }
-        this.day = _day;
+
+        day = _day;
     }
 
     public int getDay() {
         return day;
     }
 
-    void showdate() {
+    void showDate() {
         System.out.printf("year=%d, month=%d, day=%d%n", year, month, day);
     }
 }
-

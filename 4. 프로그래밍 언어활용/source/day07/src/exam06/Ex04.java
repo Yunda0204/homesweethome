@@ -6,6 +6,5 @@ public class Ex04 {
         String str2 = new String("ABC");
         System.out.printf("str1 == str2: %s%n", str1 == str2);
         System.out.printf("str1.equals(str2): %s%n", str1.equals(str2));
-
     }
 }

@@ -6,7 +6,7 @@ public class Ex03 {
         System.out.println(c instanceof C);
         System.out.println(c instanceof B);
         System.out.println(c instanceof A);
-//        System.out.println(c instanceof String);
 
+        //System.out.println(c instanceof String);
     }
 }

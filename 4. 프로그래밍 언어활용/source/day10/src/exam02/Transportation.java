@@ -5,14 +5,16 @@ public enum Transportation {
         public int getTotal(int person) {
             return getFare() * person;
         }
-    }, SUBWAY(1450) {
+    },
+    SUBWAY(1450) {
         public int getTotal(int person) {
             return getFare() * person;
         }
-    }, TAXI(4800) {
-        public int getTotal(int person) {
-            return getFare() * person;
-        }
+    },
+    TAXI(4800) {
+      public int getTotal(int person) {
+          return getFare() * person;
+      }
     };
 
     private final int fare;
@@ -26,5 +28,4 @@ public enum Transportation {
     }
 
     public abstract int getTotal(int person);
-
 }

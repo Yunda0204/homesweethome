@@ -1,7 +1,7 @@
 package exam04;
 
 public class Book {
-    private int isbn; // 도서번호
+    private int isbn; // 도서 번호
     private String title; // 도서명
     private String author; // 저자
 
@@ -19,5 +19,4 @@ public class Book {
                 ", author='" + author + '\'' +
                 '}';
     }
-
 }

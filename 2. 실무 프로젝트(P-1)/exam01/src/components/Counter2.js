@@ -5,8 +5,6 @@ class Counter extends Component {
     number: 0,
   };
 
-  //클래스 함수 안씀
-
   render() {
     const { number } = this.state;
     const plus = () => this.setState({ number: number + 1 });

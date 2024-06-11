@@ -1,39 +1,48 @@
 @import './utils.scss';
 
-.SassComponent{
+.SassComponent {
     display: flex;
-    .box{
-       
-        // .box .red === &.red
-        &.red { 
-            background-color: $red;
-            @include square(1);
+
+    .box {
+        &.red {
+            background: $red;
+            @include square(1); 
         }
-        &.orange{
-            background-color: $orange;
+
+        &.orange {
+            background: $orange;
             @include square(2);
         }
-        &.yellow{
-            background-color: $yellow;
+
+        &.yellow {
+            background: $yellow;
             @include square(3);
         }
-        &.green{
-            background-color: $green;
+
+        &.green {
+            background: $green;
             @include square(4);
         }
-        &.blue{
-            background-color: $blue;
+
+        &.blue {
+            background: $blue;
             @include square(5);
         }
-        &.indigo{
-            background-color: $indigo;
+
+        &.indigo {
+            background: $indigo;
             @include square(6);
         }
-        &.violet{
-            background-color: $violet;
+
+        &.violet {
+            background: $violet;
             @include square(7);
         }
-        &:hover{
-            background-color: #000;
+
+        &:hover {
+            background: #000;
         }
-}};
+    }
+
+    
+}

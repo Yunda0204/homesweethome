@@ -12,13 +12,15 @@ public class Ex06 {
         books.add(new Book(1002, "책3", "저자3"));
         books.add(new Book(1003, "책4", "저자4"));
         books.add(new Book(1004, "책5", "저자5"));
+
         Iterator<Book> iter = books.iterator();
-        while (iter.hasNext()) {
+        while(iter.hasNext()) {
             Book book = iter.next();
             System.out.println(book);
         }
 
-        while (iter.hasNext()) {
+        iter = books.iterator();
+        while(iter.hasNext()) {
             Book book = iter.next();
             System.out.println(book);
         }

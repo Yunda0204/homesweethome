@@ -1,9 +1,11 @@
 package exam01;
 
-public class ex04 {
+public class Ex04 {
     public static void main(String[] args) {
         char ch1 = 65;
+
         System.out.println(ch1);
-//    char ch2 = -65;
+
+        //char ch2 = -65;
     }
 }

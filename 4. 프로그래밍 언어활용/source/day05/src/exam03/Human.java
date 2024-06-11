@@ -3,8 +3,7 @@ package exam03;
 public class Human extends Animal {
     @Override
     public void move() {
-        System.out.println("두 발로 직립 보행을 한다");
-
+        System.out.println("두발로 직립보행.");
     }
 
     public void reading() {

@@ -1,8 +1,5 @@
 package exam03;
 
-import javax.swing.plaf.PanelUI;
-import java.util.TreeMap;
-
 public class Ex02 {
     public static void main(String[] args) {
         Animal[] animals = {new Human(), new Bird(), new Tiger()};
@@ -14,17 +11,15 @@ public class Ex02 {
         for (Animal animal : animals) {
             animal.move();
 
-            if (animal instanceof Human){
-            Human human = (Human) animal;
-            human.reading();
-        } else if (animal instanceof Tiger) {
+            if (animal instanceof Human) {
+                Human human = (Human) animal;
+                human.reading();
+            } else if (animal instanceof Tiger) {
                 Tiger tiger = (Tiger) animal;
                 tiger.hunting();
-            } else if (animal instanceof Bird) {
-                Bird bird = (Bird) animal;
-                bird.flying();
-
             }
-        }
-}}
 
+        }
+
+    }
+}

@@ -13,20 +13,18 @@ public class Ex01 {
         HashMap<String, String> members2 = new HashMap<>();
         members2.put("user04", "사용자04");
         members2.put("user05", "사용자05");
-        members2.put("user06", "사용자06");
-
 
         members.putAll(members2);
-        members2.replace("user06", "사용자0123");
+        //members.put("user05", "(수정)사용자05");
+        members.replace("user05", "(수정)사용자05");
         members.remove("user05");
 
-        String userNm = members.get("user06");
+        String userNm = members.get("user03");
         System.out.println(userNm);
 
-        String userNm2 = members.getOrDefault("user07", "없음");
+        String userNm2 = members.getOrDefault("user06", "없음");
         System.out.println(userNm2);
 
-
-//        System.out.println(members); // members.toString()
+       System.out.println(members); // members.toString()
     }
 }

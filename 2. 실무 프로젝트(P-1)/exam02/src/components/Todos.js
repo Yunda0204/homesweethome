@@ -12,19 +12,19 @@ const intialValue = [
 
 const Todos = () => {
   const [items, setItems] = useState(intialValue);
-  const ontoggle = (id) => {
+
+  const onToggle = (id) => {
     const newItems = items.map((item) =>
       item.id === id ? { ...item, done: !item.done } : item,
     );
 
     setItems(newItems);
   };
-  // const listItems = items.map((item) => <li>{item.title}</li>);
 
   return (
     <ul>
       {items.map(({ id, title, done }) => (
-        <li key={id} onClick={() => ontoggle(id)}>
+        <li key={id} onClick={() => onToggle(id)}>
           {done ? <MdOutlineCheckBox /> : <MdOutlineCheckBoxOutlineBlank />}
           {title}
         </li>

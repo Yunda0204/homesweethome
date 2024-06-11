@@ -13,16 +13,16 @@ public class Ex02 {
         books.add(new Book(1004, "책5", "저자5"));
 
         ListIterator<Book> iter = books.listIterator();
-        System.out.println("--- 순방향 ---");
-        while (iter.hasNext()) {
+        System.out.println("--- 순방향 ----");
+        while(iter.hasNext()) {
             Book book = iter.next();
             int index = iter.nextIndex();
             System.out.println(book);
             System.out.println("index : " + index);
         }
 
-        System.out.println("--- 역방향 ---");
-        while (iter.hasPrevious()) {
+        System.out.println("--- 역방향 ----");
+        while(iter.hasPrevious()) {
             Book book = iter.previous();
             int index = iter.previousIndex();
             System.out.println(book);

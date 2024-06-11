@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Ex04 {
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException  {
         String strDate = "31/05/23 00:00";
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy HH:mm");
 

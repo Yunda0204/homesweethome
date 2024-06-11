@@ -2,22 +2,22 @@ import { useState } from 'react';
 
 const Profile = () => {
   const [data, setData] = useState({
-    //useState 정해진 함수, 상태값
     name: '이이름',
     age: 40,
   });
-
+  // const d1 = data;
   const changeProfile = () => {
-    // data.name = '박선화';
-    // data.age = 30;                      주소가 같아서 밖에선 안바뀜 / 밖에선 바뀜
+    // data.name = '김이름';
+    // data.age = 30;
 
-    // setData({ name: '박선화', age: 25 });  data가 아니라 setData로 주소를 변경해서 가능
-
-    // setData({ ...data, name: '박선화' }); //...으로 data 내의 name 값을 변경
-
-    setData((state) => {
-      console.log('이전 상태값 : ', state);
-      return { ...data, name: '이세현' };
+    //const d2 = data;
+    // const newData = { name: '김이름', age: 30 };
+    // console.log(data === newData);
+    //setData(newData);
+    //setData({ ...data, name: '김이름' });
+    setData((prevState) => {
+      console.log('변경전 상태값 : ', prevState);
+      return { ...prevState, name: '김이름' };
     });
   };
 
@@ -25,7 +25,7 @@ const Profile = () => {
   return (
     <>
       <h1>{name}</h1>
-      <h1>{age}</h1>
+      <h2>{age}</h2>
       <button type="button" onClick={changeProfile}>
         변경
       </button>

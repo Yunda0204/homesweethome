@@ -5,8 +5,8 @@ public class Ex02 {
         Transportation trans = Transportation.BUS;
         Enum<Transportation> trans2 = trans;
 
-        switch (trans) {
-            case BUS:
+        switch(trans) {
+            case BUS :
                 System.out.println("버스");
                 break;
             case SUBWAY:
@@ -15,7 +15,6 @@ public class Ex02 {
             case TAXI:
                 System.out.println("택시");
                 break;
-
         }
     }
 }

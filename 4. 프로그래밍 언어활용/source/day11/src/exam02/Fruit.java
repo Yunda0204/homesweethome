@@ -1,7 +1,5 @@
 package exam02;
 
-public class Fruit {
-    public static void main(String[] args) {
+public abstract class Fruit {
 
-    }
 }

@@ -7,7 +7,7 @@ public class Ex05 {
         Class cls = Student.class;
 
         Method[] methods = cls.getMethods();
-        for(Method method : methods){
+        for (Method method : methods) {
             System.out.println(method);
         }
     }

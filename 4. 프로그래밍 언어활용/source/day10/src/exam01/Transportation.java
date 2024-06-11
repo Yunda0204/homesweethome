@@ -2,8 +2,8 @@ package exam01;
 
 public enum Transportation {
     BUS(1400),
-    SUBWAY(1300),
-    TAXI(4500);
+    TAXI(4500),
+    SUBWAY(1300);
 
     private final int fare;
 
@@ -15,9 +15,5 @@ public enum Transportation {
         return fare;
     }
 
-
+    //public abstract int getTotal(int person);
 }
-//    public abstract int getTotal(int person);
-
-
-

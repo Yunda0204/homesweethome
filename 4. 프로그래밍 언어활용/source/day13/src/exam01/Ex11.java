@@ -1,7 +1,6 @@
 package exam01;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,8 +13,13 @@ public class Ex11 {
         names.add("이름4");
         names.add("이름5");
 
-        Collections.swap(names, 2, 3);
+        Collections.swap(names, 1, 3);
         System.out.println(names);
 
+        Collections.reverse(names);
+        System.out.println(names);
+
+        Collections.replaceAll(names, "이름3", "name3");
+        System.out.println(names);
     }
 }

@@ -1,20 +1,19 @@
 .wrapper {
-    padding : 20px; 
-    background-color: lightcoral;
-    color: lightgreen;
-    font-size : 2rem;
+    padding: 20px;
+    background: black;
+    color: white;
+    font-size: 2rem;
 
-.highlight {
-    color: blue;
-    font-weight: bold;
+    .highlight {
+        color: orange;
+        font-weight: bold;
+    }
 }
-}
-
 
 .menus {
-    background-color: lightseagreen;
+    background: gray;
 }
 
 :global .commonColor {
-    color: orange;
+    color: blue;
 }

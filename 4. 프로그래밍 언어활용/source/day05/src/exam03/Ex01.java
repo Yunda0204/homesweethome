@@ -17,7 +17,7 @@ public class Ex01 {
         animals[1] = tiger; // Animal animals[1] = tiger;
         animals[2] = bird; // Animal animals[2] = bird;
 
-        // for (int i = 0; i < animals.length; i++) {
+       // for (int i = 0; i < animals.length; i++) {
         //    animals[i].move();
         //}
 

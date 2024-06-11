@@ -1,14 +1,12 @@
 package exam03;
 
-import javax.swing.*;
-
 public class Board {
 
-    private Board instance = new Board();
+    private static Board instance = new Board();
 
-    private Board() {
+    private Board() {}
 
-    public Board
-
+    public static Board getInstance() {
+        return instance;
     }
 }

@@ -13,7 +13,7 @@ const CSSModule = () => {
         <span className="commonColor">안녕하세요</span>,
         <span className={styles.highlight}>반갑습니다.</span>
       </div>
-      <div className={cx('menus', ['cls1', 'clc2'], { on: visible })}>메뉴</div>
+      <div className={cx('menus', ['cls1', 'cls2'], { on: visible })}>메뉴</div>
       <button type="button" onClick={() => setVisible(!visible)}>
         클릭
       </button>

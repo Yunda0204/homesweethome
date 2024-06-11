@@ -17,6 +17,5 @@ public class Ex03 {
 
         String value = anno.value();
         System.out.println(value);
-
     }
 }

@@ -7,6 +7,5 @@ public class Ex01 {
         appleBox.add(new Apple());
 
         Jucier.make(appleBox);
-
     }
 }

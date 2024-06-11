@@ -3,7 +3,7 @@ package exam04;
 public class Box {
     private Object item;
 
-    public Object getItem(){
+    public Object getItem() {
         return item;
     }
 

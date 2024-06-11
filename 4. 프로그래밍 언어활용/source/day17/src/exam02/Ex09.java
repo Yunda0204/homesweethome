@@ -16,7 +16,6 @@ public class Ex09 {
         ZonedDateTime newYorkZdt = zdt1.withZoneSameInstant(ZoneId.of("America/New_York"));
         System.out.println(newYorkZdt);
 
-//        ZoneId.getAvailableZoneIds().forEach(System.out::println);
-
+        //ZoneId.getAvailableZoneIds().forEach(System.out::println);
     }
 }

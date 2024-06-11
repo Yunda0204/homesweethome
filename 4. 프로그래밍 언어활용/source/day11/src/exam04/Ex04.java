@@ -10,8 +10,9 @@ public class Ex04 {
         items.offer(2);
         items.offer(3);
 
-        System.out.println(items.poll());
-        System.out.println(items.poll());
-        System.out.println(items.poll());
+        System.out.println(items.poll()); // 1
+        System.out.println(items.poll()); // 2
+        System.out.println(items.poll()); // 3
+
     }
 }

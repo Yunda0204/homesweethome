@@ -2,11 +2,11 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class MyComponent extends Component {
-  static defauultProps = {
-    name: '기본이름',
+  static defaultProps = {
+    name: '기본 이름',
   };
 
-  static propTyeps = {
+  static propTypes = {
     name: PropTypes.string,
     num: PropTypes.number.isRequired,
   };
@@ -17,7 +17,7 @@ class MyComponent extends Component {
     return (
       <>
         <div>안녕하세요!, 제 이름은 {name}입니다.</div>
-        <div>제가 좋아하는 숫자는 {num}입니다.</div>
+        <div>좋아하는 숫자는 {num}입니다.</div>
         {children}
       </>
     );

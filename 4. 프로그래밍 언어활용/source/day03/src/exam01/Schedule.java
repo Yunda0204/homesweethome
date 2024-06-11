@@ -6,7 +6,7 @@ public class Schedule {
     private int day;
 
     public Schedule() {
-        this(2024, 4, 17);
+        this(2024, 4, 18);
     }
 
     public Schedule(int year, int month, int day) {
@@ -36,26 +36,24 @@ public class Schedule {
     }
 
     public void setDay(int day) {
-        if (month == 2 && day > 28) {
+        if (this.month == 2 && day > 28) {
             day = 28;
-            if (year % 4 == 0) {
-                day = 29;
-            } else day = 28;
         }
+
         this.day = day;
     }
 
     public void showDate() {
-        System.out.printf("year=%d,  month=%d, day=%d%n", year, month, day);
-        printThis();
+        System.out.printf("year=%d, month=%d, day=%d%n", year, month, day);
+        printThis(); // this.printThis()
     }
+
     public void printThis() {
         System.out.println(this);
     }
 
-    public Schedule returnThis(){
+    public Schedule returnThis() {
         return this;
-
     }
 
     @Override
@@ -67,5 +65,3 @@ public class Schedule {
                 '}';
     }
 }
-
-

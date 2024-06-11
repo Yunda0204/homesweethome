@@ -15,6 +15,5 @@ public class Ex04 {
 
         String yoilStr2 = dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.KOREAN);
         System.out.println(yoilStr2);
-
     }
 }
