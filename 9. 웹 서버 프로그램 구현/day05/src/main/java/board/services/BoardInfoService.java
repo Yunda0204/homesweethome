@@ -9,7 +9,8 @@ import java.util.stream.IntStream;
 public class BoardInfoService {
 
     public List<BoardData> getList() {
-        // 게시글 목록 조회 로직 . . .
+        // 게시글 목록 조회 로직 ....
+
         List<BoardData> items = IntStream.rangeClosed(1, 10)
                 .mapToObj(i -> BoardData.builder()
                         .seq(i)
@@ -19,6 +20,8 @@ public class BoardInfoService {
                         .regDt(LocalDateTime.now())
                         .build())
                 .toList();
+
         return items;
+
     }
 }

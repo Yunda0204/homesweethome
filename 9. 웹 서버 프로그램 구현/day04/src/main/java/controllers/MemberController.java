@@ -13,12 +13,12 @@ import java.io.PrintWriter;
 public class MemberController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String mode = getMode(req);
-        if (mode.equals("join")) {
-            joinform(req, resp);
-        } else if (mode.equals("login")) {
-            loginform(req, resp);
-        }
+       String mode = getMode(req);
+       if (mode.equals("join")) {
+           joinForm(req, resp);
+       } else if (mode.equals("login")) {
+           loginForm(req, resp);
+       }
     }
 
     @Override
@@ -35,21 +35,21 @@ public class MemberController extends HttpServlet {
         String url = req.getRequestURI();
         String[] urls = url.split("/");
         String mode = urls.length > 0 ? urls[urls.length - 1] : "";
+
         return mode;
     }
-
-    // 회원가입 양식
-    private void joinform(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.setContentType("Text/html;charset=UTF-8");
+    // 회원 가입 양식
+    private void joinForm(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.setContentType("text/html;charset=UTF-8");
 
         PrintWriter out = resp.getWriter();
         out.println("<h1>회원가입</h1>");
+
     }
 
     // 로그인 양식
-    private void loginform(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.setContentType("Text/html;charset=UTF-8");
-
+    private void loginForm(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.setContentType("text/html; charset=UTF-8");
         PrintWriter out = resp.getWriter();
         out.println("<h1>로그인</h1>");
     }

@@ -1,7 +1,7 @@
-<%@ page contentType = "text/html; charset=UTF-8"%>
-<%@ page isErrorPage='true'%>
-<h1>에러 발생!1</h1>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page isErrorPage="true" %>
+<h1>에러 발생!!</h1>
 <%=exception.getMessage()%>
 <%
-    exception.printStackTrace();
+   exception.printStackTrace();
 %>
