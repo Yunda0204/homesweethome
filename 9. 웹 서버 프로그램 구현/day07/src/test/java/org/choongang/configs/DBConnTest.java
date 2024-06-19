@@ -11,7 +11,7 @@ public class DBConnTest {
 
     @Test
     @DisplayName("DB 연결 테스트")
-    void dbConnectionTest(){
+    void dbConnectionTest() {
         assertDoesNotThrow(() -> {
             SqlSession session = DBConn.sqlSession();
             System.out.println(session);
