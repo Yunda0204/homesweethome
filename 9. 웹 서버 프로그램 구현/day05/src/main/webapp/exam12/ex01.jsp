@@ -5,4 +5,3 @@
     cookie.setHttpOnly(true);
     response.addCookie(cookie);
 %>
-

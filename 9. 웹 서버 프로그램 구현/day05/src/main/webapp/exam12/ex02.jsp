@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import='board.entities.*' %>
+<%@ page import="board.entities.*" %>
 <%
     BoardData board = BoardData.builder()
             .subject("제목")
