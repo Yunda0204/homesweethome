@@ -17,7 +17,7 @@ public class LoginService {
     }
 
     public void process(HttpServletRequest request) {
-        // 로그인 유효성 검사
+        // 로그인 유효성 검사, 얘가 오류가 안나야 밑으로 넘어감
         validator.check(request);
 
         // 로그인 처리 - 회원 정보 조회, 세션에 유지
