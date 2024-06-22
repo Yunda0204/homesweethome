@@ -10,6 +10,7 @@ import org.choongang.member.validators.LoginValidator;
 public class MemberServiceProvider {
     private static MemberServiceProvider instance;
 
+    // private 생성자: 외부에서 인스턴스 생성 불가
     private MemberServiceProvider() {}
 
     public static MemberServiceProvider getInstance() {

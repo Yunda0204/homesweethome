@@ -12,11 +12,11 @@ public class CommonRequestWrapper extends HttpServletRequestWrapper {
 
         HttpServletRequest request = (HttpServletRequest) req;
 
-        /* 로그인 상태, 로그인 회원 정보 전역 유지 */
-        boolean isLogin = MemberUtil.isLogin(request);
-        Member member = MemberUtil.getMember(request);
-        request.setAttribute("isLogin", isLogin);
-        request.setAttribute("loggedMember", member);
+        /* 로그인 상태, 로그인 회원 정보 전역 유지, 요청 속성에 추가 */
+        boolean isLogin = MemberUtil.isLogin(request); // 로그인 여부 확인
+        Member member = MemberUtil.getMember(request); // 로그인된 회원 정보 가져오기
+        request.setAttribute("isLogin", isLogin); // isLogin 속성 추가
+        request.setAttribute("loggedMember", member); // loggedMember 속성 추가
 
     }
 }
