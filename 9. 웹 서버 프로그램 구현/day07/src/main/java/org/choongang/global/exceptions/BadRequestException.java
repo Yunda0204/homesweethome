@@ -8,6 +8,8 @@ public class BadRequestException extends CommonException {
         this("잘못된 요청입니다.");
     }
 
+    String qwe = (String) new Object();
+
     public BadRequestException(String message) {
         super(message, HttpServletResponse.SC_BAD_REQUEST);
     }

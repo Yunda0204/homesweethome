@@ -13,9 +13,9 @@ import java.nio.file.Files;
 public class FileDownloadController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        File file = new File("D:/upload/1.png");
-        File file2 = new File("D:/upload/2.png");
-        File file3 = new File("D:/upload/3.png");
+        File file = new File("D:/uploads/1.png");
+//        File file2 = new File("D:/upload/2.png");
+//        File file3 = new File("D:/upload/3.png");
         String contentType = Files.probeContentType(file.toPath());
 
         // 윈도우즈에서 한글 깨짐 문제 발생, 인코딩을 UTF-8 -> CPC949, EUC-KR, IS08859_1
