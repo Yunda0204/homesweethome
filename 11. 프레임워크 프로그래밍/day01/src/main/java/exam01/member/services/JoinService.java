@@ -4,19 +4,25 @@ import exam01.member.controllers.RequestJoin;
 import exam01.member.dao.MemberDao;
 import exam01.member.entities.Member;
 import exam01.member.validators.JoinValidator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+@Service
 public class JoinService {
 
+    @Autowired
     private JoinValidator validator;
+    @Autowired // 이게 있으면 생성자 없어도 가능 컨테이너에서 찾아와서 생성함
     private MemberDao memberDao;
-
-    // 의존 관계 - 없으면 객체 생성 X
-    public JoinService(JoinValidator validator, MemberDao memberDao) {
-        this.validator = validator;
-        this.memberDao = memberDao;
-    }
+//
+//    // 의존 관계 - 없으면 객체 생성 X
+//    public JoinService(JoinValidator validator, MemberDao memberDao) {
+//        this.validator = validator;
+//        this.memberDao = memberDao;
+//    }
 
     /*
     // 연관 관계 - 없어도 객체는 생성 된다.

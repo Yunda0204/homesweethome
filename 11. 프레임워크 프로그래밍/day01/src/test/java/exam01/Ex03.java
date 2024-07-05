@@ -14,37 +14,48 @@ public class Ex03 {
 
     @Test
     void test1() {
-//        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx2.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx2.class);
 
-//        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext("exam01.config");
-
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class);
-
-        JoinService joinService = ctx.getBean(JoinService.class); // APpCtx2
-        InfoService infoService = ctx.getBean(InfoService.class); // APpCtx2
+        JoinService joinService = ctx.getBean(JoinService.class);
+        InfoService infoService = ctx.getBean(InfoService.class);
 
         RequestJoin form = RequestJoin.builder()
-                .email("qwer@naver.com")
-                .password("qwer1234")
-                .confirmPassword("qwer1234")
-                .userName("민설희")
-                .RegDt(LocalDateTime.now())
+                .email("user01@test.org")
+                .password("12345678")
+                .confirmPassword("12345678")
+                .userName("사용자01")
                 .build();
-
-
         joinService.process(form);
-        infoService.printList();
 
-        Greeter g1 = ctx.getBean(Greeter.class); // AppCtx
-        g1.hello("차두현");
+        infoService.printList();
 
         ctx.close();
     }
 
     @Test
     void test2() {
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class, AppCtx2.class);
+        //AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class, AppCtx2.class);
 
+        //AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext("exam01.config");
 
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class);
+
+        JoinService joinService = ctx.getBean(JoinService.class); // AppCtx2
+        InfoService infoService = ctx.getBean(InfoService.class); // AppCtx2
+
+        RequestJoin form = RequestJoin.builder()
+                .email("user01@test.org")
+                .password("12345678")
+                .confirmPassword("12345678")
+                .userName("사용자01")
+                .build();
+        joinService.process(form);
+
+        infoService.printList();
+
+        Greeter g1 = ctx.getBean(Greeter.class); // AppCtx
+        g1.hello("윤다은");
+
+        ctx.close();
     }
 }
