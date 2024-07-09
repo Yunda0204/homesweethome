@@ -1,5 +1,6 @@
 package exam01;
 
+import config.ProxyCalculator;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Proxy;
@@ -11,10 +12,12 @@ public class Ex01 {
         Object obj = Proxy.newProxyInstance(
                 Calculator.class.getClassLoader(),
                 new Class[]{Calculator.class},
-                new CalculatorHandler()
+                new CalculatorHandler(new RecCalculator())
         );
 
         Calculator cal = (Calculator) obj;
-        cal.factorial(10L);
+        long result = cal.factorial(10L);
+        System.out.println(result);
     }
+
 }

@@ -5,11 +5,24 @@ import java.lang.reflect.Method;
 
 public class CalculatorHandler implements InvocationHandler {
 
+    private Object obj;
+
+    public CalculatorHandler(Object obj) {
+        this.obj = obj;
+    }
+
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        long stime = System.nanoTime();
+        try {
+            Object result = method.invoke(obj, args);
+            // Calculator factorial 호출 // 핵심 기능 대신 수행
 
-        System.out.println("유입");
-
-        return null;
+            return result;
+        } finally {
+            long etime = System.nanoTime();
+            // 추가 기능 - 공통 기능, 공통 관심사
+            System.out.printf("걸린시간 : %d%n", etime - stime);
+        }
     }
 }
