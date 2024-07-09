@@ -8,17 +8,21 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
-@ComponentScan("exam01")
+//@EnableAspectJAutoProxy(proxyTargetClass = true) // true = 서브 클래스 기반 프록시
 @EnableAspectJAutoProxy
-// AOp 자동 설정 애노테이션
+// AOP 자동 설정 애노테이션
 public class AppCtx {
 
     @Bean
-    public ProxyCalculator proxyCalculator() {
-        return new ProxyCalculator();
+    public ProxyCalculator2 proxyCalculator() {
+        return new ProxyCalculator2();
     }
 
-    @Bean
+//    @Bean
+//    public RecCalculator calculator() {
+//        return new RecCalculator();
+//    }
+
     public Calculator calculator() {
         return new RecCalculator();
     }
