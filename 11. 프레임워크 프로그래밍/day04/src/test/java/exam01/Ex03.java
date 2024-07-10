@@ -11,7 +11,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
-//자동적으로 롤백
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = AppCtx.class)
 public class Ex03 {
@@ -28,13 +27,17 @@ public class Ex03 {
     @Test
     void test2() {
         Member member = Member.builder()
-                .email("qwer99@naver.com")
-                .password("qwer1234")
-                .userName("류다혜")
+                .email("user99@test.org")
+                .password("12345678")
+                .userName("사용자99")
                 .build();
         int result = memberMapper.register(member);
 
         Member member2 = memberMapper.get(member.getEmail());
         System.out.println(member2);
+
+        int exists = memberMapper.exists(member.getEmail());
+        System.out.println(exists);
+
     }
 }

@@ -7,7 +7,6 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -17,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @MapperScan("mappers")
 @ComponentScan("member")
-//@EnableJdbcRepositories("member.repositories")
+//@EnableJdbcRepositories("member")
 public class AppCtx {
 
     @Bean(destroyMethod = "close")
@@ -62,4 +61,11 @@ public class AppCtx {
         SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBean.getObject();
         return sqlSessionFactory;
     }
+    /*
+    @Bean
+    public MappingContext mappingContext() {
+        JdbcMappingContext ctx = new JdbcMappingContext();
+
+        return ctx;
+    } */
 }
