@@ -1,6 +1,8 @@
 package configs;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -9,6 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebMvc
 // 100줄 대신 써주는 어노테이션, 무적권 외울 것
+@ComponentScan("member")
+@Import(DBConfig.class)
 public class MvcConfig implements WebMvcConfigurer {
     // WebMvcConfigurer << 인터페이스들 외울 것, 무적권
 
