@@ -23,6 +23,7 @@ public class MemberController {
         return "member/join";
     }
 
+
     @PostMapping("/join")
     public String joinPs(RequestJoin form) {
 
