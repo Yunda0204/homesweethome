@@ -7,15 +7,22 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration;
+import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import javax.xml.crypto.Data;
+
 @Configuration
 @EnableTransactionManagement
 @MapperScan("org.choongang")
-public class DBConfig {
+@EnableJdbcRepositories("org.choongang")
+public class DBConfig extends AbstractJdbcConfiguration {
 
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
@@ -41,13 +48,12 @@ public class DBConfig {
     }
 
     @Bean
-    public JdbcTemplate jdbcTemplate() { // mybatis 쓰면 필요없음
+    public JdbcTemplate jdbcTemplate() {
         return new JdbcTemplate(dataSource());
     }
 
     @Bean
-    public PlatformTransactionManager platformTransactionManager() {
-
+    public PlatformTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dataSource());
     }
 
@@ -57,6 +63,11 @@ public class DBConfig {
         factoryBean.setDataSource(dataSource());
 
         return factoryBean.getObject();
+    }
+
+    @Bean
+    public NamedParameterJdbcOperations namedParameterJdbcOperations(DataSource dataSource) {
+        return new NamedParameterJdbcTemplate(dataSource);
     }
 
 }
