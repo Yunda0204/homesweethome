@@ -3,7 +3,7 @@ package org.choongang.member.services;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.exceptions.BadRequestException;
 import org.choongang.member.controllers.RequestJoin;
-import org.choongang.member.entites.Member;
+import org.choongang.member.entities.Member;
 import org.choongang.member.mappers.MemberMapper;
 import org.choongang.member.validators.JoinValidator;
 import org.mindrot.jbcrypt.BCrypt;
