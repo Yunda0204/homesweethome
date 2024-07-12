@@ -35,7 +35,8 @@ public class MemberControllerTest {
         mockMvc.perform(post("/member/join")
                 .header("appKey", "1234") // 요청헤더
                                 .contentType(MediaType.APPLICATION_JSON_VALUE) // 상수로 하는게 좋음 contentType
-                        )
+
+                )
 
                 .andDo(print());
 

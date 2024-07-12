@@ -16,6 +16,29 @@ import java.util.logging.Logger;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
+
+    @GetMapping("/join")
+    public String join() {
+
+        return "member/join";
+    }
+
+    @PostMapping("/join")
+    public String joinPs(RequestJoin form) {
+
+//        return "redirect:/member/login"; // Location: /day05/member/login 슬래시를 붙혀야 절대경로 '/'
+        return "forward:/member/login"; // 버퍼 치환
+    }
+
+    @GetMapping("/login")
+    public String login() {
+
+        return "member/login";
+    }
+}
+
+
+    /*
 //    @RequestMapping(path = "/member/join", method = {RequestMethod.GET, RequestMethod.POST})
 //        System.out.println("method : " + request.getMethod());
 
@@ -38,7 +61,7 @@ public class MemberController {
     }
 
 
-    @PostMapping(path = "/join", headers = "appKey=1234", consumes = MediaType.APPLICATION_JSON_VALUE) // 요청 헤더
+    @PostMapping(path = "/join", headers = "appKey=1234", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE) // 요청 헤더
     public String joinPs(RequestJoin form) {
 
         log.info("joinPs 실행 ...");
@@ -56,6 +79,5 @@ public class MemberController {
 //
 //        return mv;
 //    }
+*/
 
-
-}
