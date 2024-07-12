@@ -1,15 +1,15 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:url var="actionUrl" value="/member/join" />
-
 ${commonValue}
 <h1>회원가입</h1>
 <form:form method="POST" action="${actionUrl}" autocomplete="off" modelAttribute="requestJoin">
     <dl>
         <dt>이메일</dt>
         <dd>
-            <form:input path="email" cssClass="input-txt" cssStyle="border-color: pink;"/>
+            <form:input path="email" cssClass="input-txt" cssStyle="border-color: pink; />
         </dd>
     </dl>
     <dl>

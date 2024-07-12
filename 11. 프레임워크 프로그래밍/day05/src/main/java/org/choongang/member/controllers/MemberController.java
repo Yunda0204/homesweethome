@@ -1,7 +1,10 @@
 package org.choongang.member.controllers;
 
+import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.tags.shaded.org.apache.bcel.classfile.Code;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,13 +13,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+import java.util.Locale;
 
 @Slf4j
 @Controller
 @RequestMapping("/member")
+@RequiredArgsConstructor
 public class MemberController {
 
+    private final MessageSource messageSource;
+    private final HttpServletRequest request;
+
     @ModelAttribute("commonValue")
+
     public String commonValue() {
 
         return "공통 속성값...";
@@ -43,6 +52,10 @@ public class MemberController {
     @GetMapping("/join")
 
     public String join(@ModelAttribute RequestJoin from) {
+
+        Locale locale = request.getLocale(); // 요청 헤더 Accept-Language
+        String message = messageSource.getMessage("EMAIL", null, locale);
+        log.info(message);
 
         return "member/join";
     }
