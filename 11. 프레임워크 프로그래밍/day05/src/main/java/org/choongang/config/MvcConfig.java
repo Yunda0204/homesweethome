@@ -23,6 +23,15 @@ public class MvcConfig implements WebMvcConfigurer {
     }
 
     @Override
+    public void addViewControllers(ViewControllerRegistry registry) { // 기본메인페이지
+        registry.addViewController("/")
+                .setViewName("main/index");
+
+        registry.addViewController("/mypage")
+                .setViewName("mypage/index");
+    }
+
+    @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("/WEB-INF/templates/", ".jsp");
     }

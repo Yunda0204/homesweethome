@@ -3,10 +3,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:url var="actionUrl" value="/member/join" />
 
-${requestJoin}
-
+${commonValue}
 <h1>회원가입</h1>
-<form:form method="POST" action="${actionUrl}" autocomplete="off" modeAttribute="requestJoin">
+<form:form method="POST" action="${actionUrl}" autocomplete="off" modelAttribute="requestJoin">
     <dl>
         <dt>이메일</dt>
         <dd>
@@ -29,6 +28,12 @@ ${requestJoin}
         <dt>회원명</dt>
         <dd>
             <form:input path="userName" />
+        </dd>
+    </dl>
+    <dl>
+        <dt>취미</dt>
+        <dd>
+            <form:checkboxes path="hobby" items="${hobbies}" />
         </dd>
     </dl>
     <dl>
