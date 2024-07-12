@@ -6,7 +6,6 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration;
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -16,8 +15,6 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.xml.crypto.Data;
-
 @Configuration
 @EnableTransactionManagement
 @MapperScan("org.choongang")
@@ -26,7 +23,6 @@ public class DBConfig extends AbstractJdbcConfiguration {
 
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
-
         DataSource ds = new DataSource();
 
         /* 연결 설정 S */
