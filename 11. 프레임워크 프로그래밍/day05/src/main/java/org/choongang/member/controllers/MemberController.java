@@ -18,7 +18,11 @@ import java.util.logging.Logger;
 public class MemberController {
 
     @GetMapping("/join")
-    public String join() {
+    public String join(Model model) {
+
+        RequestJoin form = new RequestJoin();
+
+        model.addAttribute("requestJoin", form);
 
         return "member/join";
     }
@@ -26,17 +30,27 @@ public class MemberController {
     @PostMapping("/join")
     public String joinPs(RequestJoin form) {
 
-//        return "redirect:/member/login"; // Location: /day05/member/login 슬래시를 붙혀야 절대경로 '/'
-        return "forward:/member/login"; // 버퍼 치환
+        log.info(form.toString());
+
+        return "member/join";
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public String login() {
 
         return "member/login";
     }
+
 }
 
+/*
+    @PostMapping("/join")
+    public String joinPs(RequestJoin form) {
+
+//        return "redirect:/member/login"; // Location: /day05/member/login 슬래시를 붙혀야 절대경로 '/'
+        return "forward:/member/login"; // 버퍼 치환
+    }
+*/
 
     /*
 //    @RequestMapping(path = "/member/join", method = {RequestMethod.GET, RequestMethod.POST})
