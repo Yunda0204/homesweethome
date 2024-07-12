@@ -1,6 +1,7 @@
 package org.choongang.member.controllers;
 
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.tags.shaded.org.apache.bcel.classfile.Code;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,20 @@ public class MemberController {
         return List.of("취미1", "취미2", "취미3", "취미4");
     }
 
+    @ModelAttribute("hobbies2")
+    public List<CodeValue> hobbies2() {
+
+        return List.of(
+                new CodeValue("취미1", "hobby1"),
+                new CodeValue("취미2", "hobby2"),
+                new CodeValue("취미3", "hobby3"),
+                new CodeValue("취미4", "hobby4")
+        );
+    }
+
+
     @GetMapping("/join")
+
     public String join(@ModelAttribute RequestJoin from) {
 
         return "member/join";
@@ -45,7 +59,7 @@ public class MemberController {
     public String login(RequestLogin2 form) {
 
         if (form != null) {
-        log.info("이메일:{}, 비밀번호: {}", form.email(), form.password());
+            log.info("이메일:{}, 비밀번호: {}", form.email(), form.password());
         }
 
         return "member/login";
