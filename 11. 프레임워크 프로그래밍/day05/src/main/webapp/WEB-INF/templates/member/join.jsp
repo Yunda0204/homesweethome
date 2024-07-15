@@ -23,7 +23,7 @@
         </dt>
         <dd>
             <form:password path="password" />
-            <form:errors path="password" element="div" delimiter="" />
+            <form:errors path="password" />
         </dd>
     </dl>
     <dl>
@@ -32,7 +32,7 @@
         </dt>
         <dd>
            <form:password path="confirmPassword" />
-           <form:errors path="confirmPassword" element="div" delimiter="" />
+           <form:errors path="confirmPassword" />
         </dd>
     </dl>
     <dl>
@@ -41,7 +41,7 @@
         </dt>
         <dd>
             <form:input path="userName" />
-            <form:errors path="userName" element="div" delimiter="" />
+            <form:errors path="userName" />
         </dd>
     </dl>
     <dl>
