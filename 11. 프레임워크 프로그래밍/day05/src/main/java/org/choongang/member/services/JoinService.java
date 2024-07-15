@@ -18,7 +18,9 @@ public class JoinService {
 
     public void process(RequestJoin form) {
         // 유효성 검사
-        validator.check(form);
+       // validator.check(form);
+
+
 
         // 비밀번호 해시화
         String hash = BCrypt.hashpw(form.getPassword(), BCrypt.gensalt(12));
