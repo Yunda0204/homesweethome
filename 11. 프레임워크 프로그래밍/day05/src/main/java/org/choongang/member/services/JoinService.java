@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class JoinService {
 
-    private final JoinValidator validator;
+//    private final JoinValidator validator;
     private final MemberMapper mapper;
 
     public void process(RequestJoin form) {
