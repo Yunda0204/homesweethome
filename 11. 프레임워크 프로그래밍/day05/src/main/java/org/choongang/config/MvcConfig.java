@@ -1,15 +1,27 @@
 package org.choongang.config;
 
+import lombok.RequiredArgsConstructor;
+import org.choongang.member.validators.JoinValidator;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.validation.Validator;
 import org.springframework.web.servlet.config.annotation.*;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan("org.choongang")
 @Import({DBConfig.class, MessageConfig.class})
+//@RequiredArgsConstructor
 public class MvcConfig implements WebMvcConfigurer {
+/*
+    private final JoinValidator joinValidator; // 보여주기 위한 예시, 이렇게 안씀
+
+    @Override
+    public Validator getValidator() { // 모든 컨트롤러에 적용 될 수 있는 validator
+        return joinValidator;
+    }
+*/
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
