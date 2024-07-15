@@ -2,6 +2,7 @@ package org.choongang.member.validators;
 
 import lombok.RequiredArgsConstructor;
 import org.choongang.member.controllers.RequestJoin;
+import org.choongang.member.mappers.MemberMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -10,6 +11,8 @@ import org.springframework.validation.Validator;
 @RequiredArgsConstructor
 public class JoinValidator implements Validator {
 
+    private final MemberMapper mapper;
+
     @Override
     public boolean supports(Class<?> clazz) { // RequestJoin 커맨드 객체만 검증 하도록 제한
         return clazz.isAssignableFrom(RequestJoin.class);
@@ -17,7 +20,18 @@ public class JoinValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
+        /*
+         * 1. 필수 항목 검증 (email, password, confirmPassword, userName, agree)
+         * 2. 이메일 중복 여부(회원이 가입되어 있는지 체크)
+         * 3. 비밀번호 자리수 체크(8자리)
+         * 4. 비밀번호, 비밀번호 확인 일치 여부
+         */
 
+        RequestJoin form = (RequestJoin) target;
+        String email = form.getEmail();
+        String password = form.getPassword();
+        String confirmPassword = form.getConfirmPassword();
+        String userName = form.getUserName();
     }
 }
 
