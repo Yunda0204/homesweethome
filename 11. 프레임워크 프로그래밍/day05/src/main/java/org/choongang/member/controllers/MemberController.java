@@ -3,6 +3,7 @@ package org.choongang.member.controllers;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.choongang.global.exceptions.BadRequestException;
 import org.choongang.member.entities.Member;
 import org.choongang.member.services.JoinService;
 import org.choongang.member.services.LoginService;
@@ -83,6 +84,31 @@ public class MemberController {
     public String logout(HttpSession session) {
         session.invalidate(); // 세션 비우기
         return "redirect:/member/login";
+    }
+
+    @GetMapping("/list")
+    public String list(@Valid @ModelAttribute MemberSearch search, Errors errors) {
+
+        log.info(search.toString());
+        boolean result = false;
+        if (!result) {
+            throw new BadRequestException("비상비상초비상");
+        }
+        return "member/list";
+    }
+
+    @ResponseBody
+    @GetMapping({"/info/{id}/{id2}", "/info/{id}"})
+    public void info(@PathVariable("id") String email, @PathVariable(name = "id2", required = false) String email2) {
+
+        log.info("email:{}, email2:{}", email, email2);
+    }
+
+    @GetMapping("/error")
+    @ExceptionHandler(BadRequestException.class)
+    public String errorHandler() {
+
+        return "error/common";
     }
 
     /*

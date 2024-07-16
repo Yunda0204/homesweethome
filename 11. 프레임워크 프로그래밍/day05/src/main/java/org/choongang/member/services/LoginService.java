@@ -18,7 +18,7 @@ public class LoginService {
     private final HttpServletResponse response;
 
     public void process(String email) {
-        /*
+        /**
          * 1. email로 회원 조회
          * 2. 세션에 회원 정보를 유지
          */
@@ -38,8 +38,11 @@ public class LoginService {
         Cookie cookie = new Cookie("savedEmail", form.getEmail());
         if (form.isSaveEmail()) { // 쿠키 등록
             cookie.setMaxAge(60 * 60 * 24 * 7); // 7일간 쿠키 유지
+
         } else { // 쿠키 제거
             cookie.setMaxAge(0);
         }
+
+        response.addCookie(cookie);
     }
 }
