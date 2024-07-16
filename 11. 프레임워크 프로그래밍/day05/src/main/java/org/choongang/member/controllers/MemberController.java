@@ -1,5 +1,7 @@
 package org.choongang.member.controllers;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +14,7 @@ import org.choongang.member.validators.LoginValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
@@ -104,13 +107,15 @@ public class MemberController {
         log.info("email:{}, email2:{}", email, email2);
     }
 
-    @GetMapping("/error")
-    @ExceptionHandler(BadRequestException.class)
-    public String errorHandler() {
+    /*
+    @ExceptionHandler(Exception.class)
+    public String errorHandler(Exception e, HttpServletResponse response, HttpServletRequest request, Model model) {
 
+        e.printStackTrace();
+        log.info("MemberController에서 유입");
         return "error/common";
     }
-
+*/
     /*
     @InitBinder
     public void initBinder(WebDataBinder binder) {
