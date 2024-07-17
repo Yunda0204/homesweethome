@@ -6,6 +6,9 @@ import org.choongang.member.controllers.RequestJoin;
 import org.choongang.member.entities.Member;
 import org.choongang.member.mappers.MemberMapper;
 import org.choongang.member.services.JoinService;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -21,9 +24,13 @@ public class ApiMemberController {
     private final MemberMapper mapper;
     private final JoinService joinService;
 
-    @PostMapping // ("/api/member")
-    public void join(RequestJoin form) {
+    @PostMapping // POST ("/api/member")
+    public ResponseEntity join(@RequestBody RequestJoin form) {
         log.info(form.toString());
+        joinService.process(form);
+
+        // 응답 코드 201, 출력 바디 X
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/info/{email}")
@@ -36,7 +43,7 @@ public class ApiMemberController {
     }
 
     @GetMapping("/list")
-    public List<Member> list() {
+    public ResponseEntity <List<Member>> list() {
         List<Member> members = IntStream.rangeClosed(1, 10)
                 .mapToObj(i -> Member.builder()
                         .email("user" + i + "@test.org")
@@ -46,7 +53,11 @@ public class ApiMemberController {
                         .build())
                 .toList();
 
-        return members;
+        HttpHeaders headers = new HttpHeaders(); // 헤더
+        headers.add("t1", "v1");
+        headers.add("t1", "v2");
+
+        return new ResponseEntity<>(members, headers, HttpStatus.OK);
     }
 
     @GetMapping(path="/test", produces = "text/html;charset=UTF-8")
