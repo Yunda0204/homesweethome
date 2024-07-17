@@ -18,6 +18,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.IntStream;
+
 @Controller
 @RequestMapping("/member")
 @RequiredArgsConstructor
@@ -105,6 +109,21 @@ public class MemberController {
     public void info(@PathVariable("id") String email, @PathVariable(name = "id2", required = false) String email2) {
 
         log.info("email:{}, email2:{}", email, email2);
+    }
+
+    @ResponseBody
+    @GetMapping("/list2")
+    public List<Member> list() {
+        List<Member> members = IntStream.rangeClosed(1, 10)
+                .mapToObj(i -> Member.builder()
+                        .email("user" + i + "@test.org")
+                        .password("12345678")
+                        .userName("사용자" + i)
+                        .regDt(LocalDateTime.now())
+                        .build())
+                .toList();
+
+        return members;
     }
 
     /*
