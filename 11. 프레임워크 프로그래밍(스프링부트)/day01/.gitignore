@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+application-dev.*
+### 조별로 할때 여긴 개별로 설정하셈 ###
