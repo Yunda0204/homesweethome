@@ -1,4 +1,4 @@
-package org.choongang.global.advice;
+package org.choongang.global.advices;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

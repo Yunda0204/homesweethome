@@ -34,7 +34,7 @@ public class MemberController2Test {
 
     @Test
     void test1() throws Exception {
-        mockMvc.perform(post("/member/join")
+        mockMvc.perform(post("/member/join.html")
                 .header("appKey", "1234") // 요청헤더
                                 .contentType(MediaType.APPLICATION_JSON_VALUE) // 상수로 하는게 좋음 contentType
                 )
@@ -44,7 +44,7 @@ public class MemberController2Test {
     @Test
     void test2() throws Exception {
         mockMvc.perform(
-                        get("/member/join")
+                        get("/member/join.html")
                                 .header("Accept-Language", Locale.KOREAN.getLanguage())
                 )
                 .andDo(print());

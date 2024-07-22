@@ -1,14 +1,12 @@
 package org.choongang.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -26,42 +24,46 @@ import java.util.List;
 @Import({DBConfig.class,
         MessageConfig.class,
         InterceptorConfig.class,
-        FileConfig.class}) */
+        FileConfig.class})
 //@RequiredArgsConstructor
+ */
 public class MvcConfig implements WebMvcConfigurer {
-/*
-    private final JoinValidator joinValidator; // 보여주기 위한 예시, 이렇게 안씀
 
+    /*
+    private final JoinValidator joinValidator;
+
+    // 모든 컨트롤러에 적용될 수 있는 전역 Validator
     @Override
-    public Validator getValidator() { // 모든 컨트롤러에 적용 될 수 있는 validator
+    public Validator getValidator() {
         return joinValidator;
     }
-*/
+    */
+
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
 
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) { // 정적 경로 지정
-        registry.addResourceHandler("/**") // ** 두개는 모든 하위 경로 지정 * 한개는 지정 경로만
+    public void addResourceHandlers(ResourceHandlerRegistry registry) { // 정적 경로 설정
+        registry.addResourceHandler("/**") // *, ** 차이 구분할 것.
                 .addResourceLocations("classpath:/static/");
-
     }
 
     @Override
-    public void addViewControllers(ViewControllerRegistry registry) { // 기본메인페이지
+    public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/")
-                .setViewName("main/index");
+                .setViewName("main/index.html");
 
         registry.addViewController("/mypage")
-                .setViewName("mypage/index");
+                .setViewName("mypage/index.html");
     }
-
+    /*
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.jsp("/WEB-INF/templates/", ".jsp");
     }
+    */
 
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {

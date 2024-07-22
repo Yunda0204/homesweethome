@@ -22,7 +22,7 @@ public class MemberOnlyInterceptor implements HandlerInterceptor {
             return true; // 컨트롤러 빈 메서드 실행
         }
 
-        response.sendRedirect(request.getContextPath() + "/member/login"); // 미로그인시 이 페이지로 이동
+        response.sendRedirect(request.getContextPath() + "/member/login.html"); // 미로그인시 이 페이지로 이동
 
         return false; // 미로그인 상태
     }

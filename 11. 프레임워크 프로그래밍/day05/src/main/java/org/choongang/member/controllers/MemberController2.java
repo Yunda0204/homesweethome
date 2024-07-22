@@ -47,7 +47,7 @@ public class MemberController2 {
     }
 
 
-    @GetMapping("/join")
+    @GetMapping("/join.html")
 
     public String join(@ModelAttribute RequestJoin from) {
 
@@ -55,87 +55,87 @@ public class MemberController2 {
         String message = messageSource.getMessage("EMAIL", null, locale);
         log.info(message);
 
-        return "member/join";
+        return "member/join.html";
     }
 
-    @PostMapping("/join")
+    @PostMapping("/join.html")
     public String joinPs(@ModelAttribute RequestJoin form) { // <<< 커맨드 객체 RequestJoin form
 
         log.info(form.toString());
 
-        return "member/join";
+        return "member/join.html";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/login.html")
     public String login(RequestLogin2 form) {
 
         if (form != null) {
             log.info("이메일:{}, 비밀번호: {}", form.email(), form.password());
         }
 
-        return "member/login";
+        return "member/login.html";
     }
 
 }
 
 /*
-    @PostMapping("/join")
+    @PostMapping("/join.html")
     public String joinPs(RequestJoin form) {
 
-//        return "redirect:/member/login"; // Location: /day05/member/login 슬래시를 붙혀야 절대경로 '/'
-        return "forward:/member/login"; // 버퍼 치환
+//        return "redirect:/member/login.html"; // Location: /day05/member/login.html 슬래시를 붙혀야 절대경로 '/'
+        return "forward:/member/login.html"; // 버퍼 치환
     }
 
-        @GetMapping("/join")
-    public String join(Model model) {
+        @GetMapping("/join.html")
+    public String join.html(Model model) {
 
         RequestJoin form = new RequestJoin();
 
         model.addAttribute("requestJoin", form);
 
-        return "member/join";
+        return "member/join.html";
     }
 
 */
 
     /*
-//    @RequestMapping(path = "/member/join", method = {RequestMethod.GET, RequestMethod.POST})
+//    @RequestMapping(path = "/member/join.html", method = {RequestMethod.GET, RequestMethod.POST})
 //        System.out.println("method : " + request.getMethod());
 
 //    private final Logger log = LoggerFactory.getLogger(MemberController.class); //@Slf4j 로 대신함
 
-    @GetMapping("/join")
+    @GetMapping("/join.html")
     public String join1() {
 //        log.info("mode 없음");
         log.info("{},{} 없음", "mode1", "mode2");
-        return "member/join";
+        return "member/join.html";
     }
 
-    @GetMapping(path = "/join", params = {"mode=join"})
-    public String join(Model model, HttpServletRequest request) {
+    @GetMapping(path = "/join.html", params = {"mode=join.html"})
+    public String join.html(Model model, HttpServletRequest request) {
 
-        System.out.println("mode=join");
+        System.out.println("mode=join.html");
         model.addAttribute("message", "QWER 이시연 사랑해");
 
-        return "member/join";
+        return "member/join.html";
     }
 
 
-    @PostMapping(path = "/join", headers = "appKey=1234", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE) // 요청 헤더
+    @PostMapping(path = "/join.html", headers = "appKey=1234", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE) // 요청 헤더
     public String joinPs(RequestJoin form) {
 
         log.info("joinPs 실행 ...");
 
-        return "redirect:/member/login";
+        return "redirect:/member/login.html";
     }
 
 
-//    @GetMapping("/member/join")
-//    public ModelAndView join() {
+//    @GetMapping("/member/join.html")
+//    public ModelAndView join.html() {
 //
 //        ModelAndView mv = new ModelAndView();
 //        mv.addObject("message", "QWER 화이팅!");
-//        mv.setViewName("/member/join");
+//        mv.setViewName("/member/join.html");
 //
 //        return mv;
 //    }
