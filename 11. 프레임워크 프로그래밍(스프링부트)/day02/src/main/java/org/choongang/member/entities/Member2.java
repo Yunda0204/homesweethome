@@ -9,5 +9,6 @@ import lombok.Data;
 public class Member2 {
     @Id
     private int num;
+
     private int random;
 }
