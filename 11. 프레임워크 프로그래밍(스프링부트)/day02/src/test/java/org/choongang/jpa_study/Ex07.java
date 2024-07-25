@@ -1,5 +1,7 @@
 package org.choongang.jpa_study;
 
+import com.querydsl.core.BooleanBuilder;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import org.choongang.member.constants.Authority;
 import org.choongang.member.entities.Member;
 import org.choongang.member.entities.QMember;
@@ -37,7 +39,16 @@ public class Ex07 {
     @Test
     void test1() {
         QMember member = QMember.member;
+        BooleanExpression c1 = member.userName.contains("채");
 
+        List<Member> members = (List<Member>)memberRepository.findAll(c1);
+
+        members.forEach(System.out::println);
     }
 
+    @BeforeEach
+    void test2() {
+        BooleanBuilder andBuilder = new BooleanBuilder();
+    }
 }
+
