@@ -1,5 +1,6 @@
 package org.choongang.jpa_study;
 
+import com.querydsl.core.Tuple;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
@@ -30,6 +31,9 @@ public class Ex12 {
 
     @Autowired
     private BoardDataRepository boardDataRepository;
+
+    @Autowired
+    private JPAQueryFactory jpaQueryFactory;
 
     @PersistenceContext
     private EntityManager em;
@@ -91,8 +95,8 @@ public class Ex12 {
     void test4() {
         QBoardData boardData = QBoardData.boardData;
 
-        JPAQueryFactory factory = new JPAQueryFactory(em);
-        JPAQuery<BoardData> query = factory
+//        JPAQueryFactory factory = new JPAQueryFactory(em);
+        JPAQuery<BoardData> query = jpaQueryFactory
                 .selectFrom(boardData)
                 .leftJoin(boardData.member)
                 .fetchJoin();
@@ -103,6 +107,21 @@ public class Ex12 {
 
     @Test
     void test5() {
+        QBoardData boardData = QBoardData.boardData;
+        JPAQuery<Tuple> query = jpaQueryFactory.select(boardData.subject, boardData.content)
+                .from(boardData);
+        List<Tuple> items = query.fetch();
+        for (Tuple item : items) {
+            String subject = item.get(boardData.subject);
+            String content = item.get(boardData.content);
+            System.out.printf("subject = %s, content = %s%n", subject, content);
+        }
+    }
 
+    @Test
+    void test6() {
+        QBoardData boardData = QBoardData.boardData;
+        JPAQuery<Long> query = jpaQueryFactory.select(boardData.seq.sum())
+                .from(boardData);
     }
 }
