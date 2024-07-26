@@ -5,25 +5,24 @@ import lombok.*;
 import org.choongang.board.entities.BoardData;
 import org.choongang.global.entities.BaseEntity;
 import org.choongang.member.constants.Authority;
+import org.hibernate.annotations.BatchSize;
 
 import java.util.List;
 
+@Builder
+@Data
+@Entity
+@NoArgsConstructor @AllArgsConstructor
 //@Table(name="CH_MEMBER") // 테이블 이름이 클래스명과 다른 경우
 /*
 @Table(indexes = {
         @Index(name="idx_created_at_desc", columnList = "createdAt DESC"),
         @Index(name="uq_email_passsword", columnList = "email, password", unique = true)
 })*/
-@Data
-@Entity
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class Member extends BaseEntity {
-    @Id /* @GeneratedValue(strategy = GenerationType.AUTO) */
-    @GeneratedValue
-    // @Id = 기본키, 반드시 설정해야 만들어짐 / GeneratedValue = 자동 증감하는 숫자
+    @Id /* @GeneratedValue(strategy = GenerationType.AUTO) */ @GeneratedValue
     private Long seq;
+
     @Column(length=60, nullable = false, unique = true)
     private String email;
 
@@ -41,11 +40,12 @@ public class Member extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Authority authority;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="profileSeq")
     private MemberProfile profile;
 
+    @BatchSize(size=3)
     @ToString.Exclude // ToString 추가 배제
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", cascade = {CascadeType.REMOVE, CascadeType.PERSIST},orphanRemoval = true) // 제약조건 CASCADE ON DELETE는 아니다!
     private List<BoardData> items;
 }
