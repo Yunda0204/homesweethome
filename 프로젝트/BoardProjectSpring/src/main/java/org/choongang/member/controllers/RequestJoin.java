@@ -7,11 +7,11 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-public class RequestJoin {
-    @NotBlank @Email
+public class RequestJoin { // 커맨드 객체
+    @NotBlank @Email // NotNull, 이메일 형식
     private String email;
 
-    @NotBlank @Size(min=8)
+    @NotBlank @Size(min=8) // NotNull, 최소 8자리
     private String password;
 
     @NotBlank
@@ -23,6 +23,6 @@ public class RequestJoin {
     @NotBlank
     private String mobile;
 
-    @AssertTrue
+    @AssertTrue // 필수항목, True = 통과
     private boolean agree;
 }

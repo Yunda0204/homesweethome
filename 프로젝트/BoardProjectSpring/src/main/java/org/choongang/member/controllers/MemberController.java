@@ -21,15 +21,17 @@ public class MemberController {
 
     @GetMapping("/join")
     public String join(@ModelAttribute RequestJoin form) {
+        // @ModelAttribute 필수, 비어있더라도 유지 ?? 알아볼것
         return "front/member/join";
     }
 
     @PostMapping("/join")
-    public String joinPs(@Valid RequestJoin form, Errors errors) {
+    public String joinPs(@Valid RequestJoin form, Errors errors) { // @Valid 필수
+        // EL식 만들어질떄 form 이라는 변수가 아니라 requestJoin 클래스 명으로 만들어짐(앞글자 소문자)
 
         joinValidator.validate(form, errors);
 
-        if (errors.hasErrors()) {
+        if (errors.hasErrors()) { // 커맨드객체에 에러가 있으면 이동할 곳
             return "front/member/join";
         }
 
