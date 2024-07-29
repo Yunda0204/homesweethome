@@ -21,7 +21,8 @@ public class MemberController {
 
     @GetMapping("/join")
     public String join(@ModelAttribute RequestJoin form) {
-        // @ModelAttribute 필수, 비어있더라도 유지 ?? 알아볼것
+        // @ModelAttribute를 사용하여 RequestJoin 객체를 모델에 추가, view에 전달
+        // 뷰 템플릿에선 이 객체를 이용할수있음
         return "front/member/join";
     }
 
